@@ -1,8 +1,9 @@
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 
-const Header =()=>
+const Header =(props)=>
 {
    return  <Row>
         <Col lg style={{display:'flex', justifyContent:'left'}}>
@@ -11,11 +12,15 @@ const Header =()=>
         </Col>
         <Col lg style={{display:'flex', justifyContent:'right'}}>
             <Row style={{width:'250px'}}>
-                <Col sm style={{display:'flex', justifyContent:'right'}}>
-                <button >Chars</button>
+                <Col md style={{display:'flex', justifyContent:'right'}}>
+                <Button variant="primary"  size="md" 
+                onClick={()=>props.onPageChanged('char')}
+                >Chars</Button>
                 </Col>
-                <Col sm style={{display:'flex', justifyContent:'right'}}>
-                <button >Films</button>
+                <Col md style={{display:'flex', justifyContent:'right'}}>
+                <Button variant="success" size="md"
+                 onClick={()=>props.onPageChanged('film')}
+                >Film</Button>
                 </Col>
             </Row>
         </Col>

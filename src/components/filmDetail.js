@@ -1,15 +1,12 @@
 import './filmChar.css'
 import { useState  } from 'react'
 import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import Form from 'react-bootstrap/Form';
-import FilmCharDialog from './filmCharDialog';
-
-const FilmChar = (props) => {
+  
+const FilmDetail = (props) => {
     let myVar = props.dataSource.name
     const [show, setShow] = useState(false);
     
-    const [char, setChar] = useState(props.dataSource)
+    const [filmData, setFilmData] = useState(props.dataSource)
  
     const showDetails = () => {
         if (props.onCalisti !== undefined)
@@ -20,7 +17,7 @@ const FilmChar = (props) => {
    
     const saveChars =()=>
     {
-        console.log(char)
+        console.log(filmData)
       
 
     }
@@ -28,8 +25,6 @@ const FilmChar = (props) => {
 
     return  <>
     
-    <FilmCharDialog show={show} hideDialog={()=>setShow(false)} dataSource={props.dataSource} saveChars={()=>saveChars()}></FilmCharDialog>
-
     
     <table >
         <tbody>
@@ -39,12 +34,17 @@ const FilmChar = (props) => {
         <tr>
             <td>
                 <center>
-                <Button variant="warning" onClick={showDetails} size="lg">{char.name}</Button>
+                <Button variant="warning" onClick={showDetails} size="lg">{filmData.title}</Button>
                   </center>
           </td>
         </tr>
+        <tr><td style={{background:'white'}}>
+            {
+                filmData.opening_crawl
+            }
+            </td></tr>
         </tbody>
     </table>
     </>
 }
-export default FilmChar
+export default FilmDetail

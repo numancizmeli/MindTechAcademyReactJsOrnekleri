@@ -2,14 +2,20 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './components/header';
 import FilmCharsPage from './pages/filmCharsPage'
+import FilmDetailsPage from './pages/filmDetailsPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'react-bootstrap';
+import { useState } from 'react';
 function App() {
+   const [visiblePage, setVisiblePage] = useState('char')
+
    return (
    
     <Container style={{background:'#000000', border:'solid 1px', width:'80%'}}>
-     <Header></Header>
-     <FilmCharsPage></FilmCharsPage>
+     <Header onPageChanged={(val)=>setVisiblePage(val)}></Header>
+     {visiblePage=='char'? <FilmCharsPage></FilmCharsPage> :<></>}
+     {visiblePage=='film'?<FilmDetailsPage></FilmDetailsPage>:<></>}
+
      </Container>
      
   );
