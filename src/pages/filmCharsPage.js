@@ -1,4 +1,6 @@
 import FilmChar from "../components/filmChar"
+import FilmCharwUseRef from "../components/filmCharwUseRef"
+
 import { charData } from "../data/charData"
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -24,7 +26,7 @@ const FilmCharsPage = () => {
                     {  row.map((item, index2)=>{
                        return <Col  key={item.name+index2}>
                             
-                              <FilmChar key={item.name} dataSource={item}
+                              <FilmCharwUseRef key={item.name} dataSource={item}
                                 imageSource={"https://starwars-visualguide.com/assets/img/characters/" + ( index2+ 4*index + 1) + ".jpg"}
 
                             /> 

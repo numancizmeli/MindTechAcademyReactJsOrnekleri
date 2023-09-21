@@ -1,12 +1,13 @@
 import './filmChar.css'
-import { useState  } from 'react'
+import { useState,useRef  } from 'react'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 
-const FilmChar = (props) => {
+const FilmCharwUseRef = (props) => {
     let myVar = props.dataSource.name
     const [show, setShow] = useState(false);
+    const charNameRef = useRef(null)
     
     const [charName, setCharName] = useState(props.dataSource.name)
     const [charHeight, setCharHeight] = useState(props.dataSource.height)
@@ -31,10 +32,7 @@ const FilmChar = (props) => {
 
     const saveChars =()=>
     {
-        console.log(charName)
-        console.log(charHeight)
-        console.log(charMass)
-
+        console.log(charNameRef.current)
     }
 
     return  <>
@@ -45,22 +43,9 @@ const FilmChar = (props) => {
     </Modal.Header>
 
     <Modal.Body>
-      
-    <Form>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-        <Form.Label>Char Name</Form.Label>
-        <Form.Control type="text" placeholder="enter char name" value={charName} onChange={(e)=>setCharName(e.target.value)} />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
-        <Form.Label>Char Height</Form.Label>
-        <Form.Control type="text" placeholder="enter char height" value={charHeight} onChange={(e)=>setCharHeight(e.target.value)} />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
-        <Form.Label>Char Mass</Form.Label>
-        <Form.Control type="text" placeholder="enter char mass"  value={charMass} onChange={(e)=>setCharMass(e.target.value)} />
-      </Form.Group>
-    </Form>
-
+      <form>
+      <input type="text" ref={charNameRef}></input>
+      </form>
     </Modal.Body>
 
     <Modal.Footer>
@@ -90,4 +75,4 @@ const FilmChar = (props) => {
     </table>
     </>
 }
-export default FilmChar
+export default FilmCharwUseRef
