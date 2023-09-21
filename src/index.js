@@ -3,12 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import FilmCharsPage from './pages/filmCharsPage';
-import BootStrapDemo from './pages/bootstrapDemo';
- const root = ReactDOM.createRoot(document.getElementById('root'));
+  const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <FilmCharsPage  />
+    <App  />
   </React.StrictMode>
 );
 
