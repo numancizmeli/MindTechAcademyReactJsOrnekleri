@@ -26,7 +26,7 @@ const FilmCharsPage = () => {
                     {  row.map((item, index2)=>{
                        return <Col  key={item.name+index2}>
                             
-                              <FilmCharwUseRef key={item.name} dataSource={item}
+                              <FilmChar key={item.name} dataSource={item}
                                 imageSource={"https://starwars-visualguide.com/assets/img/characters/" + ( index2+ 4*index + 1) + ".jpg"}
 
                             /> 
