@@ -7,7 +7,7 @@ const FilmChar = (props) => {
             props.onCalisti()
     }
     return <table  >
-
+        <tbody>
         <tr>
             <td><img src={props.imageSource} style={{width:'250px'}} /> </td>
         </tr>
@@ -21,7 +21,7 @@ const FilmChar = (props) => {
 
             </td>
         </tr>
-
+        </tbody>
     </table>
 }
 export default FilmChar

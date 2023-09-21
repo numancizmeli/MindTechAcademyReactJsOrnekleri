@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import FilmCharsPage from './pages/filmCharsPage';
+import BootStrapDemo from './pages/bootstrapDemo';
  const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
