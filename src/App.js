@@ -8,7 +8,7 @@ import { Container } from 'react-bootstrap';
 import { useState } from 'react';
 function App() {
    const [visiblePage, setVisiblePage] = useState('char')
-
+   console.log(process.env.REACT_APP_SWAPI_URL)
    return (
    
     <Container style={{background:'#000000', border:'solid 1px', width:'80%'}}>
